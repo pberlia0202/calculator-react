@@ -1,0 +1,140 @@
+body {
+    background: rgb(7, 54, 134);
+    background: linear-gradient(90deg, rgba(7, 54, 134, 1) 0%, rgba(29, 253, 119, 1) 71%, rgba(23, 164, 9, 1) 100%);
+}
+
+.calculator-grid {
+    display: grid;
+    margin-top: 5rem;
+    justify-content: center;
+    grid-template-columns: repeat(4, 6rem);
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+
+}
+
+.calculator-grid>button {
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.calculator-grid>button:hover,
+.calculator-grid>button:focus {
+    background-color: rgba(255, 255, 255, .9);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: .75rem;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+
+.output .previous-operand {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.5rem;
+}
+
+.output .current-operand {
+    color: white;
+    font-size: 2.5rem;
+}
+
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.theme-label {
+    margin-left: 0.5rem;
+    color: white;
+    font-size: 14px;
+}
+
+.calculator-grid.dark {
+    color: white;
+}
+
+.output {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+body.dark-theme {
+    background: rgb(3, 20, 46);
+    background: linear-gradient(90deg, rgba(3, 20, 46, 0.9052871148459384) 0%, rgba(86, 55, 128, 1) 71%, rgba(44, 20, 133, 1) 100%);
+}
